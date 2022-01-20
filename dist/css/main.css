@@ -203,10 +203,12 @@ background: variables.$primary-color;
 .header ul li a:hover {
   color: #6ae6d9;
 }
-.header .mobile-header {
-  background-image: url(../img/hamburger.jpg);
+@media screen and (min-width: 1200px) {
+  .header .mobile-header {
+    display: none;
+  }
 }
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 770px) {
   .header .mobile-header {
     display: none;
   }
@@ -215,6 +217,13 @@ background: variables.$primary-color;
   .header .mobile-header {
     display: block;
   }
+}
+.header .mobile-header p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #f7f7f7;
+  font-size: 3rem;
+  margin-right: 15px;
 }
 
 .plans-title {
@@ -276,6 +285,7 @@ background: variables.$primary-color;
   text-align: center;
   margin-left: 20px;
   margin-right: 20px;
+  line-height: 20px;
 }
 .product-list .columns .price {
   font-family: "Bebas Neue", cursive;
@@ -321,6 +331,9 @@ footer {
   align-items: center;
   background-color: #0a0a2e;
   height: 150px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 footer .identity {
   margin-left: 50px;
