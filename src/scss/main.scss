@@ -29,6 +29,7 @@ background: variables.$primary-color;
 //font-family: 'Bebas Neue', cursive;
 //font-family: 'Titillium Web', sans-serif;
 //font-family: 'Inter', sans-serif;
+//font-family: 'Poppins', sans-serif;
 
 .header{
 	display: flex;
@@ -42,7 +43,7 @@ background: variables.$primary-color;
 		h1{
 			font-family: 'Titillium Web', sans-serif;
 			color: variables.$button-text;
-			font-size: variables.$primary-font-size;	
+			font-size: 2rem;	
 		}
 	}
 
@@ -52,14 +53,18 @@ background: variables.$primary-color;
 		margin-right: 50px;
 
 		li{
-			font-family: 'Bebas Neue', cursive;
-			font-size: variables.$primary-font-size;
 			padding: 30px;
-			color: variables.$button-text;	
-		}
+			a{
+				text-decoration: none;
+				color: variables.$button-text;
+				font-family: 'Poppins', sans-serif;
+				font-weight: 300;
+				font-size: 1.2rem;
+			}
 
-		li:hover{
-			color: variables.$secondary-color;
+			a:hover{
+				color: variables.$secondary-color;
+			}
 		}
 	}
 }
@@ -69,7 +74,8 @@ background: variables.$primary-color;
 	margin-top: 45px;
 
 	h2{
-		font-family: 'Bebas Neue', cursive;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 600;
 		color: rgb(10, 10, 46);
 		font-size: variables.$primary-font-size;
 		margin-bottom: 15px;
@@ -92,32 +98,69 @@ background: variables.$primary-color;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		background-color: rgb(232, 233, 250);
 		width: 30%;
+		margin: 20px;
+		border-radius: 15px;
 
 		h3{
 			font-family: 'Bebas Neue', cursive;
-			font-size: variables.$primary-font-size;
+			font-size: 3.5rem;
 			margin-bottom: 20px;
 			text-align: center;
+			padding-top: 10px;
+			margin-top: 15px;
 		}
 
 		p{
 			font-family: 'Inter', sans-serif;
 			font-size: variables.$secondary-font-size;
-			font-weight: 300;	
+			font-weight: 400;	
 			margin-bottom: 25px;
+			text-align: center;
+			margin-left: 20px;
+			margin-right: 20px;
 		}
 
 		.price{
 			font-family: 'Bebas Neue', cursive;
-			font-size: variables.$primary-font-size;
+			font-size: 2.5rem;
 			font-weight: 600;
-			margin-bottom: 20px;
+			margin-top: 50px;
+			margin-bottom: 10px;
 			text-align: center;
 		}
 
-		input{
-			align-self: center;
+		.button-flex{
+			text-align: center;
+			padding-right: 30px;
+			padding-left: 30px;
+			padding-top: 30px;
+			margin-bottom: 30px;
+
+			.main-button{
+				margin-right: 50px;
+				padding: 10px;
+				background-color: variables.$button-background;
+				color: variables.$button-text;
+				font-family: 'Inter', sans-serif;
+				font-size: 1rem;
+				font-weight: 600;
+				border-radius: 10px;
+			}
+
+			.main-button:hover{
+				transform: scale(1.1);
+				transition: 0.5s;
+			}
+
+			a{
+				text-decoration: none;
+				font-family: 'Inter', sans-serif;
+				font-weight: 400;
+				font-size: .9rem;
+				color: variables.$button-background;
+			}
 		}
 	}
 }
@@ -142,10 +185,20 @@ footer{
 
 	.links{
 		li{
+			padding-bottom: 5px;
+			padding-top: 5px;
+
+			a{
 			color: variables.$button-text;
-			font-family: 'Bebas Neue', cursive;
+			font-family: 'Poppins', sans-serif;
 			padding-top: 5px;
 			padding-bottom: 5px;
+			text-decoration: none;	
+			}
+
+			a:hover{
+				color: variables.$secondary-color;
+			}
 		}
 	}
 
