@@ -25,11 +25,13 @@ background: variables.$primary-color;
 
 @use 'reset';
 @use 'variables';
+@use 'mixins';
 //@use 'mixins';
 //font-family: 'Bebas Neue', cursive;
 //font-family: 'Titillium Web', sans-serif;
 //font-family: 'Inter', sans-serif;
 //font-family: 'Poppins', sans-serif;
+//media 768px mobile
 
 .header{
 	display: flex;
@@ -45,9 +47,23 @@ background: variables.$primary-color;
 			color: variables.$button-text;
 			font-size: 2rem;	
 		}
+
+		@include mixins.bp-small{
+			margin-left: 20px;
+
+			h1{
+					font-size: 1.5rem;
+					padding-top: 20px;
+					padding-bottom: 20px;
+				}
+		}
 	}
 
 	ul{
+		@include mixins.bp-small{
+			display: none;
+		}
+
 		display: flex;
 		justify-content: space-evenly;
 		margin-right: 50px;
@@ -61,10 +77,20 @@ background: variables.$primary-color;
 				font-weight: 300;
 				font-size: 1.2rem;
 			}
-
 			a:hover{
 				color: variables.$secondary-color;
 			}
+		}
+	}
+	
+	.mobile-header{
+		background-image: url(../img/hamburger.jpg);
+
+		@include mixins.bp-large{
+			display: none;
+		}
+		@include mixins.bp-small{
+			display: block;
 		}
 	}
 }
@@ -94,6 +120,11 @@ background: variables.$primary-color;
 	justify-content: center;
 	margin-bottom: 150px;
 
+	@include mixins.bp-small{
+		flex-direction: column;
+		align-items: center;
+	}
+
 	.columns{
 		display: flex;
 		flex-direction: column;
@@ -102,6 +133,10 @@ background: variables.$primary-color;
 		width: 30%;
 		margin: 20px;
 		border-radius: 15px;
+
+		@include mixins.bp-small{
+			width: 70%;
+		}
 
 		h3{
 			font-family: 'Bebas Neue', cursive;
@@ -176,6 +211,10 @@ footer{
 		margin-left: 50px;
 		display: flex;
 
+		@include mixins.bp-small{
+			margin-left: 20px;
+		}
+
 		h1{
 			font-family: 'Titillium Web', sans-serif;
 			color: variables.$button-text;
@@ -199,6 +238,10 @@ footer{
 			a:hover{
 				color: variables.$secondary-color;
 			}
+
+			@include mixins.bp-small{
+				font-size: .8rem;
+			}
 		}
 	}
 
@@ -207,11 +250,22 @@ footer{
 		font-family: 'Inter', sans-serif;
 		font-size: variables.$secondary-font-size;
 		font-weight: 300;
+
+		@include mixins.bp-small{
+			margin-right: 15px;
+		}
 		
 		a{
 			text-decoration: none;
 			color: variables.$button-text;
+
+			@include mixins.bp-small{
+				font-size: .7rem;
+			}
+			
 		}
+
+
 	}
 			
 

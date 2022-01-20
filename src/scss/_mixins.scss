@@ -1,0 +1,14 @@
+
+//small device
+@mixin bp-small {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+//desktop
+@mixin bp-large {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
