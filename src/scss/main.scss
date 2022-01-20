@@ -1,7 +1,7 @@
 /* 
 ==============================================
-CONTENT:	Project Name Here
-AUTHOR:		Your Name Here
+CONTENT:	Plans Check Out page
+AUTHOR:		Max Ambrogio
 ==============================================
 
 TABLE OF CONTENTS:
@@ -26,17 +26,141 @@ background: variables.$primary-color;
 @use 'reset';
 @use 'variables';
 //@use 'mixins';
+//font-family: 'Bebas Neue', cursive;
+//font-family: 'Titillium Web', sans-serif;
+//font-family: 'Inter', sans-serif;
 
-$hotpink: hotpink;
-//colors 
-//primary colors
-//Primary fonts 
-//jqueary selectors
-//store variables into its own scss sheet 
-//partials
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(10, 10, 46);
 
-//3 or 4 levels of nesting
+	.identity{
+		margin-left: 50px;
+		display: flex;
+		h1{
+			font-family: 'Titillium Web', sans-serif;
+			color: variables.$button-text;
+			font-size: variables.$primary-font-size;	
+		}
+	}
 
-.floating-box{
-	color: variables.$hotpink;
+	ul{
+		display: flex;
+		justify-content: space-evenly;
+		margin-right: 50px;
+
+		li{
+			font-family: 'Bebas Neue', cursive;
+			font-size: variables.$primary-font-size;
+			padding: 30px;
+			color: variables.$button-text;	
+		}
+
+		li:hover{
+			color: variables.$secondary-color;
+		}
+	}
+}
+
+.plans-title{
+	text-align: center;
+	margin-top: 45px;
+
+	h2{
+		font-family: 'Bebas Neue', cursive;
+		color: rgb(10, 10, 46);
+		font-size: variables.$primary-font-size;
+		margin-bottom: 15px;
+	}
+
+	p{
+		margin-bottom: 45px;
+		font-family: 'Inter', sans-serif;
+		font-size: variables.$secondary-font-size;
+		font-weight: 300;
+	}
+}
+
+.product-list{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 150px;
+
+	.columns{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		width: 30%;
+
+		h3{
+			font-family: 'Bebas Neue', cursive;
+			font-size: variables.$primary-font-size;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		p{
+			font-family: 'Inter', sans-serif;
+			font-size: variables.$secondary-font-size;
+			font-weight: 300;	
+			margin-bottom: 25px;
+		}
+
+		.price{
+			font-family: 'Bebas Neue', cursive;
+			font-size: variables.$primary-font-size;
+			font-weight: 600;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		input{
+			align-self: center;
+		}
+	}
+}
+
+footer{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgb(10, 10, 46);
+	height: 150px;
+
+	.identity{
+		margin-left: 50px;
+		display: flex;
+
+		h1{
+			font-family: 'Titillium Web', sans-serif;
+			color: variables.$button-text;
+			font-size: 20px;	
+		}
+	}
+
+	.links{
+		li{
+			color: variables.$button-text;
+			font-family: 'Bebas Neue', cursive;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+	}
+
+	.copyright{
+		margin-right: 30px;
+		font-family: 'Inter', sans-serif;
+		font-size: variables.$secondary-font-size;
+		font-weight: 300;
+		
+		a{
+			text-decoration: none;
+			color: variables.$button-text;
+		}
+	}
+			
+
+
 }

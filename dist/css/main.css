@@ -135,8 +135,8 @@ table {
 
 /* 
 ==============================================
-CONTENT:	Project Name Here
-AUTHOR:		Your Name Here
+CONTENT:	Plans Check Out page
+AUTHOR:		Max Ambrogio
 ==============================================
 
 TABLE OF CONTENTS:
@@ -155,7 +155,118 @@ If you want to add partials, use Sass Modules via @use:
 Usage: partial-name.variable/mixin/function-name:
 background: variables.$primary-color;
 */
-.floating-box {
-  color: hotpink;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a0a2e;
+}
+.header .identity {
+  margin-left: 50px;
+  display: flex;
+}
+.header .identity h1 {
+  font-family: "Titillium Web", sans-serif;
+  color: #f7f7f7;
+  font-size: 1.5rem;
+}
+.header ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 50px;
+}
+.header ul li {
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5rem;
+  padding: 30px;
+  color: #f7f7f7;
+}
+.header ul li:hover {
+  color: #6ae6d9;
+}
+
+.plans-title {
+  text-align: center;
+  margin-top: 45px;
+}
+.plans-title h2 {
+  font-family: "Bebas Neue", cursive;
+  color: #0a0a2e;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+.plans-title p {
+  margin-bottom: 45px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.product-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+.product-list .columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}
+.product-list .columns h3 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.product-list .columns p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+.product-list .columns .price {
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.product-list .columns input {
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a0a2e;
+  height: 150px;
+}
+footer .identity {
+  margin-left: 50px;
+  display: flex;
+}
+footer .identity h1 {
+  font-family: "Titillium Web", sans-serif;
+  color: #f7f7f7;
+  font-size: 20px;
+}
+footer .links li {
+  color: #f7f7f7;
+  font-family: "Bebas Neue", cursive;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+footer .copyright {
+  margin-right: 30px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+footer .copyright a {
+  text-decoration: none;
+  color: #f7f7f7;
 }
 /*# sourceMappingURL=main.css.map */
