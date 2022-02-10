@@ -155,11 +155,26 @@ If you want to add partials, use Sass Modules via @use:
 Usage: partial-name.variable/mixin/function-name:
 background: variables.$primary-color;
 */
+body {
+  position: relative;
+}
+
+.BG {
+  position: absolute;
+  background-image: linear-gradient(#0a0a2e, rgba(255, 86, 221, 0.275)), url(/src/img/techBG.jpg);
+  background-size: cover;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0a0a2e;
+  background-color: rgba(10, 10, 46, 0.1);
 }
 .header .identity {
   margin-left: 50px;
@@ -169,6 +184,15 @@ background: variables.$primary-color;
   font-family: "Titillium Web", sans-serif;
   color: #f7f7f7;
   font-size: 2rem;
+}
+.header .identity img {
+  padding-right: 20px;
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .header .identity img {
+    display: none;
+  }
 }
 @media screen and (max-width: 768px) {
   .header .identity {
@@ -202,6 +226,9 @@ background: variables.$primary-color;
 }
 .header ul li a:hover {
   color: #6ae6d9;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  transition: 700ms;
 }
 @media screen and (min-width: 1200px) {
   .header .mobile-header {
@@ -233,7 +260,7 @@ background: variables.$primary-color;
 .plans-title h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  color: #0a0a2e;
+  color: #f7f7f7;
   font-size: 3rem;
   margin-bottom: 15px;
 }
@@ -242,6 +269,7 @@ background: variables.$primary-color;
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   font-weight: 300;
+  color: #f7f7f7;
 }
 
 .product-list {
@@ -277,6 +305,28 @@ background: variables.$primary-color;
   padding-top: 10px;
   margin-top: 15px;
 }
+.product-list .columns .hidden {
+  position: absolute;
+  width: 14%;
+  background-color: #f2f2e2;
+  opacity: 0;
+  z-index: 1;
+}
+.product-list .columns .hidden p {
+  padding-top: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 400;
+  line-height: 15px;
+  text-align: left;
+}
+.product-list .columns .hidden:hover {
+  top: 16%;
+  translate: 1;
+  transition-duration: 500ms;
+  opacity: 1;
+  z-index: -1;
+}
 .product-list .columns p {
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
@@ -304,25 +354,36 @@ background: variables.$primary-color;
 }
 .product-list .columns .button-flex .main-button {
   margin-right: 50px;
+  width: 40%;
   padding: 10px;
   background-color: #41484e;
   color: #f7f7f7;
   font-family: "Inter", sans-serif;
-  font-size: 1rem;
+  font-size: 1.2vw;
   font-weight: 600;
   border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .product-list .columns .button-flex .main-button {
+    font-size: 2.8vw;
+  }
 }
 .product-list .columns .button-flex .main-button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  transition: 0.5s;
+  transition: 700ms;
 }
 .product-list .columns .button-flex a {
   text-decoration: none;
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 1.2vw;
   color: #41484e;
+}
+@media screen and (max-width: 768px) {
+  .product-list .columns .button-flex a {
+    font-size: 2.8vw;
+  }
 }
 
 footer {
@@ -348,6 +409,10 @@ footer .identity h1 {
   font-family: "Titillium Web", sans-serif;
   color: #f7f7f7;
   font-size: 20px;
+  z-index: 1;
+}
+footer .links {
+  z-index: 1;
 }
 footer .links li {
   padding-bottom: 5px;
@@ -362,6 +427,9 @@ footer .links li a {
 }
 footer .links li a:hover {
   color: #6ae6d9;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  transition: 700ms;
 }
 @media screen and (max-width: 768px) {
   footer .links li {
@@ -373,6 +441,7 @@ footer .copyright {
   font-family: "Inter", sans-serif;
   font-size: 0.8rem;
   font-weight: 300;
+  z-index: 1;
 }
 @media screen and (max-width: 768px) {
   footer .copyright {
@@ -387,5 +456,17 @@ footer .copyright a {
   footer .copyright a {
     font-size: 0.7rem;
   }
+}
+
+footer::after {
+  content: "";
+  background-image: url(/src/img/BG-tech.png);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.3;
 }
 /*# sourceMappingURL=main.css.map */

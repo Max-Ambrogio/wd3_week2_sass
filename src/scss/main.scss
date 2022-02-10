@@ -33,11 +33,31 @@ background: variables.$primary-color;
 //font-family: 'Poppins', sans-serif;
 //media 768px mobile
 
+body{
+	position: relative;
+}
+
+.BG{
+	position: absolute;
+	background-image:linear-gradient(
+		rgb(10, 10, 46),
+		rgba(255, 86, 221, 0.275),
+	),
+	 url(/src/img/techBG.jpg);
+	background-size: cover;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -2;
+	
+}
+
 .header{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: rgb(10, 10, 46);
+	background-color: rgb(10, 10, 46, 0.1);
 
 	.identity{
 		margin-left: 50px;
@@ -46,6 +66,14 @@ background: variables.$primary-color;
 			font-family: 'Titillium Web', sans-serif;
 			color: variables.$button-text;
 			font-size: 2rem;	
+		}
+
+		img{
+			padding-right: 20px;
+			display: block;
+			@include mixins.bp-small{
+				display: none;
+			}
 		}
 
 		@include mixins.bp-small{
@@ -79,11 +107,13 @@ background: variables.$primary-color;
 			}
 			a:hover{
 				color: variables.$secondary-color;
+				transform: scale(1.1);
+				transition: 700ms;
 			}
 		}
 	}
 	
-	.mobile-header{
+.mobile-header{
 		@include mixins.bp-large{
 			display: none;
 		}
@@ -111,7 +141,7 @@ background: variables.$primary-color;
 	h2{
 		font-family: 'Poppins', sans-serif;
 		font-weight: 600;
-		color: rgb(10, 10, 46);
+		color: variables.$button-text;
 		font-size: variables.$primary-font-size;
 		margin-bottom: 15px;
 	}
@@ -121,6 +151,7 @@ background: variables.$primary-color;
 		font-family: 'Inter', sans-serif;
 		font-size: variables.$secondary-font-size;
 		font-weight: 300;
+		color: variables.$button-text;
 	}
 }
 
@@ -156,6 +187,31 @@ background: variables.$primary-color;
 			margin-top: 15px;
 		}
 
+		.hidden{
+			position: absolute;
+			width: 14%;
+			background-color: rgb(242, 242, 226);
+			opacity: 0;
+			z-index: 1;
+
+			p{
+				padding-top: 20px;
+				font-family: 'Inter', sans-serif;
+				font-size:.6rem;
+				font-weight: 400;
+				line-height: 15px;
+				text-align: left;
+			}
+			
+		}
+		.hidden:hover{
+			top:16%;
+			translate: (1);
+			transition-duration: 500ms;
+			opacity: 1;
+			z-index: -1;
+		}
+
 		p{
 			font-family: 'Inter', sans-serif;
 			font-size: variables.$secondary-font-size;
@@ -185,29 +241,38 @@ background: variables.$primary-color;
 
 			.main-button{
 				margin-right: 50px;
+				width: 40%;
 				padding: 10px;
 				background-color: variables.$button-background;
 				color: variables.$button-text;
 				font-family: 'Inter', sans-serif;
-				font-size: 1rem;
+				font-size: 1.2vw;
 				font-weight: 600;
 				border-radius: 10px;
+				@include mixins.bp-small{
+					font-size: 2.8vw;
+				}
 			}
 
 			.main-button:hover{
 				transform: scale(1.1);
-				transition: 0.5s;
+				transition: 700ms;
 			}
 
 			a{
 				text-decoration: none;
 				font-family: 'Inter', sans-serif;
 				font-weight: 400;
-				font-size: .9rem;
+				font-size: 1.2vw;
 				color: variables.$button-background;
+
+				@include mixins.bp-small{
+					font-size: 2.8vw;
+				}
 			}
 		}
 	}
+
 }
 
 footer{
@@ -231,11 +296,13 @@ footer{
 		h1{
 			font-family: 'Titillium Web', sans-serif;
 			color: variables.$button-text;
-			font-size: 20px;	
+			font-size: 20px;
+			z-index: 1;	
 		}
 	}
 
 	.links{
+		z-index: 1;
 		li{
 			padding-bottom: 5px;
 			padding-top: 5px;
@@ -250,6 +317,8 @@ footer{
 
 			a:hover{
 				color: variables.$secondary-color;
+				transform: scale(1.1);
+				transition: 700ms;
 			}
 
 			@include mixins.bp-small{
@@ -263,6 +332,7 @@ footer{
 		font-family: 'Inter', sans-serif;
 		font-size: variables.$secondary-font-size;
 		font-weight: 300;
+		z-index: 1;
 
 		@include mixins.bp-small{
 			margin-right: 15px;
@@ -275,12 +345,18 @@ footer{
 			@include mixins.bp-small{
 				font-size: .7rem;
 			}
-			
 		}
-
-
 	}
-			
-
-
 }
+
+footer::after{
+	content:"";
+	background-image: url(/src/img/BG-tech.png);
+	background-size: cover;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	opacity: 0.30;
+  }
